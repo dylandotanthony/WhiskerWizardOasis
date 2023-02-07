@@ -1,25 +1,34 @@
 import * as React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import Container from 'react-bootstrap/Container';
-// import Nav from 'react-bootstrap/Nav';
-// import Navbar from 'react-bootstrap/Navbar';
 import logo from '../img/WWOlogo.png'
-import { Container, Nav, Navbar, } from 'react-bootstrap'
+import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap'
+import {
+    Link
+} from "react-router-dom";
 
-const linkstyle = { color: "#30393b" }
+const linkstyle = { textDecoration: "none", color: "#30393b" }
 
-const navstyle = {
-    background: 'linear-gradient(30deg, #ccf5ff, #ffffff)', width: "1200px",
-    height: "50px",
-    margin: "100px 200px 0px 200px"
-};
+// const navstyle = {
+//     background: 'linear-gradient(30deg, #ccf5ff, #ffffff)',
+//     height: "50px",
+//     // margin: "100px 200px 0px 200px",
+
+//     float: 'left',
+
+// }
+
+// const bannerstyle = {
+//     marginTop: '100px',
+//     marginBottom: '0px',
+//     maxWidth: '100px',
+// }
 
 const NavBar = () => {
     return (
-        <div>
-            <Navbar style={navstyle}>
+        <div >
+            <Navbar  >
                 <Container >
-                    <Navbar.Brand href="#home" >
+                    <Navbar.Brand href="/" >
                         <img
                             alt=""
                             src={logo}
@@ -28,15 +37,46 @@ const NavBar = () => {
                             className="d-inline-block align-top"
                         />{' '}
                     </Navbar.Brand>
-                    <Nav className="me-auto ">
-                        <Nav.Link style={linkstyle} href="#home">Home</Nav.Link>
-                        <Nav.Link style={linkstyle} href="#about">About Us</Nav.Link>
-                        <Nav.Link style={linkstyle} href="#services">Services</Nav.Link>
-                        <Nav.Link style={linkstyle} href="#Reservations">Reservations</Nav.Link>
+                    <Nav className="me-auto " >
+                        <Navbar.Collapse id="basic-navbar-nav">
+                            <Nav className="me-auto">
+                                <Nav.Item >
+                                    <Nav.Link>
+                                        <Link style={linkstyle} to={'/'}>
+                                            Home
+                                        </Link>
+
+                                    </Nav.Link>
+                                </Nav.Item>
+                                <NavDropdown className='text-dark' title="About" id="basic-nav-dropdown">
+                                    <NavDropdown.Item style={linkstyle} >
+                                        <Link style={linkstyle} to={'/whatwedo'}>
+                                            What We Do
+                                        </Link>
+                                    </NavDropdown.Item>
+                                    <NavDropdown.Item  >
+                                        <Link style={linkstyle} to={'/groomer'}>
+                                            Groomers
+                                        </Link>
+                                    </NavDropdown.Item>
+                                </NavDropdown>
+                                <Nav.Link >
+                                    <Link style={linkstyle} to={'/services'}>
+                                        Services
+                                    </Link>
+                                </Nav.Link>
+                                <Nav.Link  >
+                                    <Link style={linkstyle} to={'/reservations'}>
+                                        Reservations
+                                    </Link>
+                                </Nav.Link>
+
+                            </Nav>
+                        </Navbar.Collapse>
                     </Nav>
                 </Container>
-            </Navbar>
-        </div>
+            </Navbar >
+        </div >
     );
 }
 

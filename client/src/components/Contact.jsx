@@ -1,6 +1,5 @@
 import * as React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import logo from '../img/WWOlogo.png'
 import { Button } from 'react-bootstrap'
 
 

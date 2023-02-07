@@ -1,5 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap');
+
+* {
+  font-family: 'Signika Negative', sans-serif;
+}
+
 h1 {
   color: green;
+  text-align: center;
 }
 
 .about {
@@ -10,4 +17,19 @@ h1 {
 
 }
 
-/* .aboutp {} */
+.bg-img {
+  /* The image used */
+  background-image: url("./img/HomePhoto.png");
+
+  min-height: 400px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  max-width: 100%;
+
+  /* Needed to position the navbar */
+  position: relative;
+
+
+}
