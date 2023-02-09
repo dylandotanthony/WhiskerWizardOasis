@@ -11,6 +11,8 @@ import Home from './components/Home';
 import NavBar from './components/NavBar';
 import Services from './components/Services';
 import Reservation from './components/Reservations';
+import Update from './components/Update';
+import UpdateForm from './components/UpdateForm';
 
 
 
@@ -26,6 +28,8 @@ function App() {
           <Route path="/whatwedo" element={<AboutUs />} />
           <Route path="/services" element={<Services />} />
           <Route path="/reservations" element={<Reservation />} />
+          <Route path="/update" element={<Update />} />
+          <Route path="/updatereservation" element={<UpdateForm />} />
         </Routes>
 
 

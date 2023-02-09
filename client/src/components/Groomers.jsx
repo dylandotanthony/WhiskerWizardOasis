@@ -8,6 +8,7 @@ import murdock from '../img/Murdock.jpg'
 import piper from '../img/Piper.png'
 import harper from '../img/Harper.jpg'
 import dmitriy from '../img/Dmitriy.jpg'
+import quinn from '../img/quinn.jpg'
 // import ContactUs from '../components/Contact'
 
 const Groomers = () => {
@@ -36,12 +37,11 @@ const Groomers = () => {
             </Container>
 
 
-            <Container>
+            <Container style={{ width: '800px' }}>
                 <Row>
-                    <Col> </Col>
                     <Col>
                         <Card style={{ width: '18rem' }}>
-                            <Card.Img variant="top" src={zarela} />
+                            <Card.Img variant="top" src={quinn} />
                             <Card.Body>
                                 <Card.Title>Quinn (she/her) </Card.Title>
                                 <Card.Subtitle> Founder & Pet Enthusiast </Card.Subtitle>
@@ -52,7 +52,6 @@ const Groomers = () => {
                             </Card.Body>
                         </Card>
                     </Col>
-                    <Col> </Col>
                     <Col>
                         <Card style={{ width: '18rem' }}>
                             <Card.Img variant="top" src={dmitriy} />
@@ -68,14 +67,13 @@ const Groomers = () => {
                     </Col>
                     <Col> </Col>
                 </Row>
-
             </Container>
 
 
             {/* Botttom section */}
 
-            <Container  >
-                <Row style={{ margin: "25px 0px 25px 0px" }}>
+            <Container style={{ width: '800px' }} >
+                <Row >
                     <Col>
                         <Card style={{ width: '18rem' }}>
                             <Card.Img variant="top" src={zarela} />
@@ -103,6 +101,10 @@ const Groomers = () => {
                             </Card.Body>
                         </Card>
                     </Col>
+                </Row>
+            </Container>
+            <Container style={{ width: '800px' }}>
+                <Row>
                     <Col>
                         <Card style={{ width: '18rem' }}>
                             <Card.Img variant="top" src={piper} />
@@ -116,6 +118,7 @@ const Groomers = () => {
                             </Card.Body>
                         </Card>
                     </Col>
+
                     <Col>
                         <Card style={{ width: '18rem' }}>
                             <Card.Img variant="top" src={harper} />
@@ -128,9 +131,7 @@ const Groomers = () => {
                                 </Card.Text>
                             </Card.Body>
                         </Card>
-
                     </Col>
-
                 </Row>
             </Container>
         </div>

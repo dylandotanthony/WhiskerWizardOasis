@@ -5,18 +5,16 @@ import '../App.css'
 // import { Container, Card, Row, Col } from 'react-bootstrap'
 import ReservationForm from './ReservationForm';
 import ContactUs from '../components/Contact'
-import {
-    Link
-} from "react-router-dom";
+import UpdateForm from './UpdateForm';
 
-const Reservation = () => {
+const Update = () => {
     return (
         <div>
             <NavBar />
             <br />
 
             <br />
-            <ReservationForm />
+            <UpdateForm />
             <br />
             <ContactUs />
         </div>
@@ -24,4 +22,4 @@ const Reservation = () => {
     )
 }
 
-export default Reservation;
+export default Update;
