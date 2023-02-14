@@ -15,7 +15,7 @@ module.exports.createReservation = (request, response) => {
 module.exports.getAllReservation = (request, response) => {
     Reservation.find({})
         .then(Reservations => {
-            console.log(Reservations); //console logs are optional, but they are highly recommended for troubleshooting!
+            console.log(Reservations);
             response.json(Reservations);
         })
         .catch(err => {

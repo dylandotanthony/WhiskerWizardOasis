@@ -1,54 +1,17 @@
-import NavBar from '../components/NavBar'
 import * as React from 'react';
 import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css'
-import { Container, Button, Card, Row, Col, Form } from 'react-bootstrap'
-import Select from 'react-select'
-import makeAnimated from 'react-select/animated';
+import { Container, Button, Row, Col, Form } from 'react-bootstrap'
 import {
     Link
 } from "react-router-dom";
-import Reservation from './Reservations';
+import axios from 'axios';
 
-const animatedComponents = makeAnimated();
-
-
-
-
-
-
-
-const options = [
-    { value: 'small dog groom', label: 'Small Dog Groom' },
-    { value: 'small dog groom', label: 'Medium Dog Groom' },
-    { value: 'small dog groom', label: 'Large Dog Groom' },
-    { value: 'small dog bath', label: 'Small Dog Bath' },
-    { value: 'small dog bath', label: 'Medium Dog Bath' },
-    { value: 'small dog bath', label: 'Large Dog Bath' },
-    { value: 'lion cut', label: 'Lion Cut' },
-    { value: 'comb cut', label: 'Comb Cut' },
-    { value: 'maintenance cut', label: 'Maintenance Cut' },
-    { value: 'sanitary cut', label: 'Sanitary Cut' },
-    { value: 'bell trim', label: 'Bell trim' },
-    { value: 'cat bath', label: 'Purrfect Bath & Blowout' },
-    { value: '', label: 'De-shed Treatment' },
-    { value: '', label: 'Ear Cleaning' },
-    { value: '', label: 'Nail Grinding' },
-    { value: '', label: 'Nail Trim' },
-    { value: '', label: 'Anal Gland Expression' },
-    { value: '', label: 'Dental Hygiene' },
-    { value: '', label: 'Flea/tick Treatment' }
-]
-
-const groomoptions = [
-    { value: 'zarela', label: 'Zarela' },
-    { value: 'murdock', label: 'Murdock' },
-    { value: 'piper', label: 'Piper' }
-]
 
 const ReservationForm = (props) => {
-    const { reservation, setreservation } = props;
+
+    const { reservation, setReservation } = props;
     const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("")
     const [petName, setPetName] = useState("")
@@ -56,12 +19,11 @@ const ReservationForm = (props) => {
     const [phoneNumber, setPhoneNumber] = useState("")
     const [petType, setPetType] = useState("")
     const [date, setDate] = useState("")
-    const [service, setService] = useState("")
-    const [groomer, setGroomer] = useState("")
+    const [service, setService] = useState("");
 
     const onSubmitHandler = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:8000/api/reservation', {
+        axios.post('http://localhost:8000/api/reservations', {
             firstName,
             lastName,
             petName,
@@ -69,32 +31,29 @@ const ReservationForm = (props) => {
             phoneNumber,
             petType,
             date,
-            service,
-            groomer
+            service
         })
             .then(res => {
                 console.log(res); // always console log to get used to tracking your data!
                 console.log(res.data);
-                setreservation([...reservation, res.data])
-                setFirstName("");
-                setLastName("");
-                setPetName("");
-                setEmail("");
-                setPhoneNumber("");
-                setPetType("");
-                setDate("");
-                setService("");
-                setGroomer("");
+                // setReservation([...reservation, res.data])
+                // setFirstName("");
+                // setLastName("");
+                // setPetName("");
+                // setEmail("");
+                // setPhoneNumber("");
+                // setPetType("");
+                // setDate("");
+                // setService("");
+                // console.log(service)
+                setReservation([...reservation, res.data])
             })
             .catch(err => console.log(err))
     }
 
 
-
-
     return (
         <div>
-
             <br />
             <h1> Reservation FOrm Content </h1>
 
@@ -105,56 +64,68 @@ const ReservationForm = (props) => {
                             <Form onSubmit={onSubmitHandler}>
                                 <Row>
                                     <Col>
-                                        <Form.Control type="text" placeholder="First name" />
+                                        <Form.Control type="text" placeholder="First name" name='firstName' value={firstName} onChange={(e) => setFirstName(e.target.value)} />
                                     </Col>
                                     <Col>
-                                        <Form.Control type="text" placeholder="Last name" />
+                                        <Form.Control type="text" placeholder="Last name" name='lastName' value={lastName} onChange={(e) => setLastName(e.target.value)} />
                                     </Col>
                                     <Col>
-                                        <Form.Control type="text" placeholder="Pet name" />
+                                        <Form.Control type="text" placeholder="Pet name" name='petName' value={petName} onChange={(e) => setPetName(e.target.value)} />
                                     </Col>
                                 </Row>
                                 <Row>
                                     <Col>
-                                        <Form.Control type="email" placeholder="Email" />
+                                        <Form.Control type="email" placeholder="Email" name='email' value={email} onChange={(e) => setEmail(e.target.value)} />
                                     </Col>
                                     <Col>
-                                        <Form.Control type="tel" placeholder="Phone Number" />
+                                        <Form.Control type="tel" placeholder="Phone Number" name='phoneNumber' value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
                                     </Col>
                                     <Col>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="radioDefault" id="formRadioDefault" />
-                                            <label class="form-check-label" for="formRadioDefault">Cat</label>
+                                        <div className="form-check form-check-inline">
+                                            <input className="form-check-input" type="radio" name='petType' value='cat' onChange={(e) => setPetType(e.target.value)} />
+                                            <label className="form-check-label" >Cat</label>
                                         </div>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="radioDefault" id="formRadioDefault" />
-                                            <label class="form-check-label" for="formRadioDefault">Dog</label>
+                                        <div className="form-check form-check-inline">
+                                            <input className="form-check-input" type="radio" name='petType' value='dog' onChange={(e) => setPetType(e.target.value)} />
+                                            <label className="form-check-label" >Dog</label>
                                         </div>
                                     </Col>
-                                </Row>
-                                <Row>
                                     <Col>
-                                        <Form.Control type="date" />
-                                    </Col>
-                                    <Col>
-                                        <Select options={options}
-                                            closeMenuOnSelect={false}
-                                            components={animatedComponents}
-                                            isMulti
-                                            placeholder="Select Service"
-                                        />
-                                    </Col>
-                                    <Col>
-                                        <Select options={groomoptions}
-                                            closeMenuOnSelect={true}
-                                            isClearable
-                                            placeholder="Select Groomer"
-                                        />
+                                        <Form.Control type="date" name='date' value={date} onChange={(e) => setDate(e.target.value)} />
                                     </Col>
                                 </Row>
+                                <br />
                                 <Row>
                                     <Col>
-                                        <Button type="submit">Make Reservation</Button>
+                                        <Row id='serveice'>
+                                            <h2 style={{ textAlign: 'center' }} >Select Grooming Package</h2>
+                                            <Col>
+                                                <div className="form-check form-check-inline">
+                                                    <input className="form-check-input" type="radio" name='service' value='Oasis Basic' onChange={(e) => setService(e.target.value)} />
+                                                    <label className="form-check-label" >Oasis Basic</label>
+                                                </div>
+                                                <div className="form-check form-check-inline">
+                                                    <input className="form-check-input" type="radio" name='service' value='Oasis +' onChange={(e) => setService(e.target.value)} />
+                                                    <label className="form-check-label" >Oasis +</label>
+                                                </div>
+                                                <div className="form-check form-check-inline">
+                                                    <input className="form-check-input" type="radio" name='service' value='Full Oasis' onChange={(e) => setService(e.target.value)} />
+                                                    <label className="form-check-label" >Full Oasis</label>
+                                                </div>
+                                            </Col>
+
+                                        </Row>
+
+
+
+
+                                    </Col>
+
+                                </Row>
+                                <br />
+                                <Row>
+                                    <Col>
+                                        <Button value="create" type="submit"  >Make Reservation</Button>
                                     </Col>
                                 </Row>
                             </Form>
@@ -164,13 +135,10 @@ const ReservationForm = (props) => {
                     <Col sm={4}>
                         <Row>
                             <Col>
-                                <Button>View Current Schedule </Button>
-                            </Col>
-                            <Col>
                                 <Link to={'/updatereservation'}>
-
                                     <Button>Change Reservation </Button>
                                 </Link>
+
                             </Col>
 
                         </Row>
@@ -190,5 +158,6 @@ const ReservationForm = (props) => {
 
     )
 }
+
 
 export default ReservationForm;

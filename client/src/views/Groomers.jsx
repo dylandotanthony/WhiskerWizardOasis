@@ -9,6 +9,7 @@ import piper from '../img/Piper.png'
 import harper from '../img/Harper.jpg'
 import dmitriy from '../img/Dmitriy.jpg'
 import quinn from '../img/quinn.jpg'
+import ContactUs from '../components/Contact';
 // import ContactUs from '../components/Contact'
 
 const Groomers = () => {
@@ -134,6 +135,8 @@ const Groomers = () => {
                     </Col>
                 </Row>
             </Container>
+            <br />
+            <ContactUs />
         </div>
 
     )

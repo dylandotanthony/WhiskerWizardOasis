@@ -36,10 +36,6 @@ const ReservationSchema = new mongoose.Schema({
         type: String,
         required: [true, "A pet type is required!!!"],
     },
-    groomer: {
-        type: String,
-        required: [true, "A pet type is required!!!"],
-    },
 }, { timestamps: true })
 
 module.exports = mongoose.model('Reservation', ReservationSchema)

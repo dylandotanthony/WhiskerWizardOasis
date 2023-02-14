@@ -5,7 +5,7 @@ import '../App.css'
 // import { Container, Card, Row, Col } from 'react-bootstrap'
 import ReservationForm from './ReservationForm';
 import ContactUs from '../components/Contact'
-import UpdateForm from './UpdateForm';
+import UpdateForm from '../views/UpdateForm';
 
 const Update = () => {
     return (

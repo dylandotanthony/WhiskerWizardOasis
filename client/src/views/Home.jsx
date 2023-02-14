@@ -3,15 +3,7 @@ import * as React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css'
 // import { Container, Card, Row, Col } from 'react-bootstrap'
-import UncontrolledExample from '../components/Carousel';
-
-// const homejpgstyle = {
-
-//     opacity: 0.5,
-//     maxWidth: "100%",
-// }
-
-
+import Carolselobj from '../components/Carousel';
 
 
 
@@ -22,7 +14,7 @@ const Home = () => {
             <NavBar />
             <br />
             <h1> Home Content </h1>
-            < UncontrolledExample />
+            < Carolselobj />
 
 
 
