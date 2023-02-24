@@ -15,7 +15,7 @@ const Carolselobj = () => {
     return (
         <div style={{ width: "250px" }}>
 
-            <Carousel style={{ opacity: '50%' }}>
+            <Carousel >
                 <Carousel.Item>
                     <img
                         className="d-block w-100"

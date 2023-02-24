@@ -68,80 +68,70 @@ const UpdateForm = (props) => {
             <br />
             <h1> Update {petName}'s Reservation </h1>
 
-            <Container>
+            <Container style={{ marginLeft: '325px' }}>
                 <Row>
                     <Col sm={8}>
                         <Container>
                             <Form onSubmit={updateReservation}>
-                                <Row>
-                                    <Col>
-                                        <Form.Control type="text" placeholder="First name" name='firstName' value={firstName} onChange={(e) => setFirstName(e.target.value)} />
-                                    </Col>
-                                    <Col>
-                                        <Form.Control type="text" placeholder="Last name" name='lastName' value={lastName} onChange={(e) => setLastName(e.target.value)} />
-                                    </Col>
-                                    <Col>
-                                        <Form.Control type="text" placeholder="Pet name" name='petName' value={petName} onChange={(e) => setPetName(e.target.value)} />
-                                    </Col>
+                                <Row className='mb-3'>
+                                    <Form.Group as={Col}>
+                                        <Form.Label>First Name</Form.Label>
+                                        <Form.Control type="text" placeholder="Enter first name" name='firstName' value={firstName} onChange={(e) => setFirstName(e.target.value)} />
+                                    </Form.Group>
+                                    <Form.Group as={Col}>
+                                        <Form.Label>Last Name</Form.Label>
+                                        <Form.Control type="text" placeholder="Enter last name" name='lastName' value={lastName} onChange={(e) => setLastName(e.target.value)} />
+                                    </Form.Group>
+                                    <Form.Group as={Col}>
+                                        <Form.Label>Pet Name</Form.Label>
+                                        <Form.Control type="text" placeholder="Enter pet name" name='petName' value={petName} onChange={(e) => setPetName(e.target.value)} />
+                                    </Form.Group>
                                 </Row>
-                                <Row>
-                                    <Col>
-                                        <Form.Control type="email" placeholder="Email" name='email' value={email} onChange={(e) => setEmail(e.target.value)} />
-                                    </Col>
-                                    <Col>
-                                        <Form.Control type="tel" placeholder="Phone Number" name='phoneNumber' value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
-                                    </Col>
-                                    <Col>
-                                        <div className="form-check form-check-inline">
-                                            <input className="form-check-input" type="radio" name='petType' value='cat' checked={petType === 'cat'} onChange={(e) => setPetType(e.target.value)} />
-                                            <label className="form-check-label" >Cat</label>
-                                        </div>
-                                        <div className="form-check form-check-inline">
-                                            <input className="form-check-input" type="radio" name='petType' value='dog' checked={petType === 'dog'} onChange={(e) => setPetType(e.target.value)} />
-                                            <label className="form-check-label" >Dog</label>
-                                        </div>
-                                    </Col>
-                                    <Col>
-                                        <Form.Control type="date" name='date' value={date} onChange={(e) => setDate(e.target.value)} />
-                                    </Col>
-                                </Row>
-                                <br />
-                                <Row>
-                                    <Col>
-                                        <Row id='services'>
-                                            <h2 style={{ textAlign: 'center' }} >Select Grooming Package</h2>
-                                            <Col >
-                                                <div className="form-check form-check-inline">
-                                                    <input className="form-check-input" type="radio" name='service' value='OasisBasic' checked={service === 'OasisBasic'} onChange={(e) => setService(e.target.value)} />
-                                                    <label className="form-check-label" >Oasis Basic</label>
-                                                </div>
-                                                <div className="form-check form-check-inline">
-                                                    <input className="form-check-input" type="radio" name='service' value='OasisPlus' checked={service === 'OasisPlus'} onChange={(e) => setService(e.target.value)} />
-                                                    <label className="form-check-label" >Oasis +</label>
-                                                </div>
-                                                <div className="form-check form-check-inline">
-                                                    <input className="form-check-input" type="radio" name='service' value='FullOasis' checked={service === 'FullOasis'} onChange={(e) => setService(e.target.value)} />
-                                                    <label className="form-check-label" >Full Oasis</label>
-                                                </div>
-                                            </Col>
+                                <Row className='mb-3'>
+                                    <Form.Group as={Col}>
+                                        <Form.Label>Email</Form.Label>
+                                        <Form.Control type="email" placeholder="Enter email" name='email' value={email} onChange={(e) => setEmail(e.target.value)} />
 
-                                        </Row>
+                                    </Form.Group>
+                                    <Form.Group as={Col}>
+                                        <Form.Label>Phone Number</Form.Label>
+                                        <Form.Control pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" type="tel" placeholder="Enter phone Number" name='phoneNumber' value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
+
+                                    </Form.Group>
+                                    <Form.Group as={Col}>
+                                        <Form.Label>Date of Reservation</Form.Label>
+                                        <Form.Control type="date" name='date' value={date} onChange={(e) => setDate(e.target.value)} />
+                                    </Form.Group>
+                                </Row>
+                                <Row className='mb-3'>
+                                    <Col style={{ textAlign: 'center' }}>
+                                        <Form.Label> Pet Type </Form.Label>
+                                        <Form.Group  >
+                                            <Form.Check className="form-check-inline" label='Cat' type="radio" name='petType' value='cat' onChange={(e) => setPetType(e.target.value)} />
+                                            <Form.Check className="form-check-inline" label='Dog' type="radio" name='petType' value='dog' onChange={(e) => setPetType(e.target.value)} />
+                                        </Form.Group>
+                                    </Col>
+                                    <Col style={{ textAlign: 'center' }}>
+                                        <Form.Label> Grooming Package </Form.Label>
+                                        <Form.Group  >
+                                            <Form.Check className="form-check-inline" label='Oasis Basic' type="radio" name='service' value='OasisBasic' onChange={(e) => setService(e.target.value)} />
+                                            <Form.Check className="form-check-inline" label='Oasis +' type="radio" name='service' value='OasisPlus' onChange={(e) => setService(e.target.value)} />
+                                            <Form.Check className="form-check-inline" label='Full Oasis ' type="radio" name='service' value='FullOasis' onChange={(e) => setService(e.target.value)} />
+                                        </Form.Group>
                                     </Col>
                                 </Row>
                                 <br />
                                 <Row>
-                                    <Col>
-                                        <Button type="submit" value="update" >Update</Button>
-                                    </Col>
+                                    <Button variant="outline-info" type="submit" value="update" >Update</Button>
                                 </Row>
                             </Form>
                         </Container>
 
                     </Col>
-                </Row>
-            </Container>
+                </Row >
+            </Container >
 
-        </div>
+        </div >
 
 
     )

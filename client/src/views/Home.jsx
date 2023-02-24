@@ -14,12 +14,14 @@ const Home = () => {
             <div className='bg-img'>
                 <NavBar />
                 <br />
-                <h1> Home Content </h1>
+                <h1> Welcome to Whisker Wizard Oasis</h1>
 
             </div>
-            <div>
+            <div style={{ position: 'relative', bottom: 160, left: 50 }}>
+
 
                 < Carolselobj />
+
             </div>
             <br />
             <div>

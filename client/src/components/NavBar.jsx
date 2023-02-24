@@ -26,7 +26,7 @@ const linkstyle = { textDecoration: "none", color: "#30393b" }
 const NavBar = () => {
     return (
         <div >
-            <Navbar  >
+            <Navbar >
                 <Container >
                     <Navbar.Brand href="/">
                         <img
@@ -37,7 +37,7 @@ const NavBar = () => {
                             className="d-inline-block align-top"
                         />{' '}
                     </Navbar.Brand>
-                    <Nav className="me-auto " >
+                    <Nav className="me-auto" >
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="me-auto">
                                 <Nav.Item >

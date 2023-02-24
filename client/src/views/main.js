@@ -11,11 +11,14 @@ const Main = (props) => {
 
     return (
         <div>
-            <NavBar />
+            <div >
+
+                <NavBar />
+            </div>
             <br />
 
             <ReservationForm reservation={reservation} setReservation={setReservation} />
-            <hr />
+            <hr style={{ width: '800px', marginLeft: '275px' }} />
             <Schedule reservation={reservation} setReservation={setReservation} />
             <br />
             <ContactUs />
