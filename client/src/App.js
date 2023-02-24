@@ -11,11 +11,9 @@ import Home from './views/Home';
 import NavBar from './components/NavBar';
 import Services from './views/Services';
 import Reservation from './components/Reservation';
-import Update from './components/Update';
-import UpdateForm from './views/UpdateForm';
-import Schedule from './components/Schedule';
+import Update from './views/Update';
+import UpdateForm from './components/UpdateForm';
 import Main from './views/main';
-import ReservationForm from './components/ReservationForm';
 
 
 
@@ -38,8 +36,8 @@ function App() {
 
 
 
-          <Route path="/update" element={<Update />} />
-          <Route path="/updatereservation" element={<UpdateForm />} />
+          <Route path="/reservations/update/:id" element={<UpdateForm />} />
+          {/* <Route path="/updatereservation" element={<UpdateForm />} /> */}
         </Routes>
 
 

@@ -23,18 +23,20 @@ const ReservationSchema = new mongoose.Schema({
     phoneNumber: {
         type: Number,
         required: [true, "A phone number is required!!!"],
+        minlength: [9],
+        maxlength: [10]
     },
     petType: {
         type: String,
         required: [true, "A pet type is required!!!"],
     },
     date: {
-        type: String,
-        required: [true, "A pet type is required!!!"],
+        type: Date,
+        required: [true, "A D=date is required!!!"],
     },
     service: {
         type: String,
-        required: [true, "A pet type is required!!!"],
+        required: [true, "A service is required!!!"],
     },
 }, { timestamps: true })
 

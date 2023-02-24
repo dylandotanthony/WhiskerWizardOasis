@@ -1,7 +1,5 @@
 import * as React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button, Row, Col } from 'react-bootstrap';
-import { grey } from '@material-ui/core/colors';
 import phone from '../img/telephone-fill.svg';
 import geo from '../img/geo-fill.svg';
 import email from '../img/email.svg';
