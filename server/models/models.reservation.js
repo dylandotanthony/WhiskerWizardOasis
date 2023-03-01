@@ -3,18 +3,15 @@ const mongoose = require("mongoose");
 const ReservationSchema = new mongoose.Schema({
     firstName: {
         type: String,
-        required: [true, "First name is required!!!"],
-        minlength: [2, "First name must be at least 2 characters"]
+        required: [true, "First name is required!!!"]
     },
     lastName: {
         type: String,
-        required: [true, "Last name must be at least 2 characters"],
-        minlength: [2, "First name must be at least 2 characters"]
+        required: [true, "Last name must be at least 2 characters"]
     },
     petName: {
         type: String,
-        required: [true, "Pet name must be at least 2 characters"],
-        minlength: [2, "First name must be at least 2 characters"]
+        required: [true, "Pet name must be at least 2 characters"]
     },
     email: {
         type: String,
@@ -22,16 +19,14 @@ const ReservationSchema = new mongoose.Schema({
     },
     phoneNumber: {
         type: Number,
-        required: [true, "A phone number is required!!!"],
-        minlength: [9],
-        maxlength: [10]
+        required: [true, "A phone number is required!!!"]
     },
     petType: {
         type: String,
         required: [true, "A pet type is required!!!"],
     },
     date: {
-        type: Date,
+        type: String,
         required: [true, "A D=date is required!!!"],
     },
     service: {

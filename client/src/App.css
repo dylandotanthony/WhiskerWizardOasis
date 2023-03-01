@@ -1,35 +1,168 @@
 @import url('https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Oxygen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap');
 
 * {
   font-family: 'Signika Negative', sans-serif;
+
 }
 
-h1 {
-  color: green;
-  text-align: center;
+
+/* home page */
+
+#welcome {
+  font-family: 'Allura', cursive;
+  font-size: 60px;
 }
 
-.about {
-  width: 950px;
-  margin: 25px 0px 25px 0px;
+.guarantee3 {
+  background-color: #3BC4F2;
+  border-radius: 5%;
+  padding: 10px;
+  text-align: justify;
+  height: 240px;
+}
 
+.guarantee2 {
+  padding: 5px;
+}
 
+.guarantee1 {
+  background-color: #D6DBDF;
+  border-radius: 5%;
 
+}
+
+.petHealth3 {
+  background-color: #1ABC9C;
+  border-radius: 5%;
+  padding: 10px;
+  text-align: justify;
+  height: 240px;
+}
+
+.petHealth2 {
+  padding: 5px;
+}
+
+.petHealth1 {
+  background-color: #D6DBDF;
+  border-radius: 5%;
+}
+
+.covid3 {
+  background-color: #AF7AC5;
+  border-radius: 5%;
+  padding: 10px;
+  text-align: justify;
+  height: 240px;
+}
+
+.covid2 {
+  padding: 5px;
+}
+
+.covid1 {
+  background-color: #D6DBDF;
+  border-radius: 5%;
 }
 
 .bg-img {
   /* The image used */
   background-image: url("./img/HomePhoto.png");
-
   min-height: 400px;
-
   /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
   max-width: 100%;
-
   /* Needed to position the navbar */
   position: relative;
+}
+
+.pay1 {
+  background-color: #D4E6F1;
+}
+
+.contactelement {
+
+  background-color: #ABEBC6;
+}
 
 
+/* groomer page */
+.aboutgroomers {
+  width: 950px;
+  margin: 25px 0px 25px 0px;
+}
+
+.groomertitles {
+  font-family: 'Nothing You Could Do', cursive;
+  text-align: center;
+  text-decoration: underline;
+  margin-bottom: 25px;
+}
+
+/* Service Page */
+.servicetext {
+  text-align: justify;
+  margin: 25px 0px 25px 0px;
+}
+
+.serviceTitle {
+  margin-top: 65px;
+  margin-right: 10px;
+  font-family: 'Nothing You Could Do', cursive;
+  text-align: center;
+  text-decoration: underline;
+  font-size: 50px;
+}
+
+.basictitle {
+  background-color: #3BF2CB;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.plustitle {
+  background-color: #14D07E;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.fulltitle {
+  background-color: #49D706;
+  border-radius: 5px;
+  text-align: center;
+}
+
+
+.servicedeets {
+  background-color: #E5E8E8;
+  border-radius: 5px;
+  margin-top: -7px;
+}
+
+.warning {
+  width: 500px;
+  margin-right: auto;
+  margin-left: auto;
+  height: 55px
+}
+
+li {
+  margin-left: 100px;
+
+}
+
+ul {
+  list-style-type: none
+}
+
+.updateTitle {
+
+
+  font-family: 'Nothing You Could Do', cursive;
+  text-align: center;
+  /* text-decoration: underline; */
+  font-size: 40px;
 }

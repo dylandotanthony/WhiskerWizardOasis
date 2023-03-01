@@ -14,9 +14,7 @@ const contactstyle = {
     height: '40px'
 
 };
-const btnstyle = {
-    background: '#00ccff'
-}
+
 
 const ContactUs = () => {
     return (

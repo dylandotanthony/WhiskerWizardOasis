@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import axios from 'axios';
+import React, { useState } from 'react';
 import ReservationForm from '../components/ReservationForm';
 import Schedule from '../components/Schedule';
 import NavBar from '../components/NavBar';

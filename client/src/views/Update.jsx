@@ -9,11 +9,11 @@ const Update = () => {
     return (
         <div>
             <NavBar />
-            <br />
 
-            <br />
+
             <UpdateForm />
             <br />
+
             <ContactUs />
         </div>
 
