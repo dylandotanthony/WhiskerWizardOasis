@@ -48,7 +48,7 @@ const Services = () => {
                     <h1 className='serviceTitle' >Oasis Menu</h1>
                     <p style={{ textAlign: 'center' }}>Whiskers bathing & grooming packages all include use of vegan products , animal deodorant , and treats</p>
                     <Alert variant='warning' className='warning'>
-                        <p className='text-center '>Additional charges for any dematting sercives</p>
+                        <p className='text-center '>Additional charges for any dematting services</p>
                     </Alert>
                 </div>
                 <Container>
